@@ -40,7 +40,7 @@ Open Chrome or FireFox : **127.0.0.1:8000**
 * You can choose to use the CNN-Attention-GRU architecture or the CNN-Transformer architecture
 * When you run the image caption generator with Flickr8k validation set, some BLEU scores will be caculated
 
-!(homepage)(files/home.png)
+![homepage](files/home.png)
 
 ## Some demo results
 ![demo1](files/demo1.png)
