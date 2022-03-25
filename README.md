@@ -13,8 +13,8 @@ $ git clone https://github.com/Nukukoricchio/image-captioning.git
 $ cd image-captioning
 ```
 
-* Then, download checkpoints folder from this [url](https://drive.google.com/drive/folders/1w4iF4yIkgty7EtuSrnHHaotprseq-Lh6?usp=sharing) and move downloaded folder to model/transformer.
-Because of Github's limiting file size, i can't push this folder directly to this repository.
+* Then, download checkpoints folder from this [url](https://drive.google.com/drive/folders/1w4iF4yIkgty7EtuSrnHHaotprseq-Lh6?usp=sharing) and paste to the model/transformer directory.
+Because of Github's limiting file size, i can't push this folder directly to my repository.
 
 * To install the required packages, run :
 
