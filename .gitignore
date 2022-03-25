@@ -1,0 +1,9 @@
+.env
+*.sqlite3
+*.pyc
+
+# Only for Development only
+**/migrations/**
+env/
+media/
+model/transformer/checkpoints/

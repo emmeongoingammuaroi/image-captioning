@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Image Captioning</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-md-8 col-lg-8 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5 rounded shadow">
+            <h3 class="card-title text-center mb-5 fw-light">Image Captioning</h3>
+            <!-- Tabs navs -->
+            <ul id="myTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+              <li class="nav-item flex-sm-fill">
+                <a id="demo-tab" data-toggle="tab" href="#demo" role="tab" aria-controls="demo" aria-selected="true" class="nav-link border-0 font-weight-bold active">Run on validation images set</a>
+              </li>
+              <li class="nav-item flex-sm-fill">
+                <a id="upload-tab" data-toggle="tab" href="#upload" role="tab" aria-controls="upload" aria-selected="false" class="nav-link border-0 font-weight-bold">Run on your image</a>
+              </li>
+            </ul>
+            <!-- Tabs navs -->
+
+            <!-- Tabs content -->
+            <div id="myTabContent" class="tab-content">
+              <div id="demo" role="tabpanel" aria-labelledby="demo-tab" class="tab-pane fade px-4 py-3 show active">
+                <form id="demo-form">
+                  <div class="form-group">
+                    <label for="demo-form-model">Model</label>
+                    <select class="form-control" id="demo-form-model">
+                      <option value="CNN-Attention-GRU" selected>CNN-Attention-GRU</option>
+                      <option value="CNN-Transformer">CNN-Transformer</option>
+                    </select>
+                  </div>
+                  <div>
+                    <img id="demo-form-image" src="" alt="" class="img-fluid rounded mx-auto d-block"/>
+                    <div id="demo-form-caption"></div>
+                  </div>
+                  <div class="loader text-center" id="demo-loader"></div>
+                  <div class="d-grid">
+                    <button class="btn btn-success btn-login fw-bold mt-2" type="submit">Run</button>
+                  </div>
+                </form>
+              </div>
+              <div id="upload" role="tabpanel" aria-labelledby="upload-tab" class="tab-pane fade px-4 py-3">
+                <form id="upload-form">
+                  <div class="form-group">
+                    <label for="upload-image">Upload image</label>
+                    <input type="file" class="form-control-file" id="upload-image" accept="image/*" onchange="readURL(this);">
+                  </div>
+                  <div class="form-group">
+                    <label for="model">Model</label>
+                    <select class="form-control" id="upload-form-model">
+                      <option value="CNN-Attention-GRU" selected>CNN-Attention-GRU</option>
+                      <option value="CNN-Transformer">CNN-Transformer</option>
+                    </select>
+                  </div>
+                  <div class="text-center">
+                    <img id="upload-form-image" src="" alt="" class="img-fluid"/>
+                    <div id="upload-form-caption"></div>
+                  </div>
+                  <div class="loader text-center" id="upload-loader"></div>
+                  <div class="d-grid">
+                    <button class="btn btn-success btn-login fw-bold mt-2" type="submit">Run</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Tabs content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
